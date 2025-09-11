@@ -1,9 +1,17 @@
 class StringBuilder { 
+    #value;
 
+    constructor(initialValue) { 
+        this.#value = initialValue;
+    }
 
-    getValue()
+    getValue() { 
+        return this.#value;
+    }
 
-    padEnd(str)
+    padEnd(str) { 
+        this.#value.push(str);
+    }
 
     padStart(str)
 
@@ -30,3 +38,31 @@ console.log(builder.getValue()); // "=^.^="
 // padEnd(str) — отримує параметр str (рядок) і додає його в кінець значення приватної властивості value об'єкта, який викликає цей метод.
 // padStart(str) — отримує параметр str (рядок) і додає його на початок значення приватної властивості value об'єкта, який викликає цей метод.
 // padBoth(str) — отримує параметр str (рядок) і додає його на початок і в кінець значення приватної властивості value об'єкта, який викликає цей метод.
+
+//  // Додає рядок у кінець
+//   append(str) {
+//     this.#value += str;
+//   }
+
+//   // Додає рядок на початок
+//   prepend(str) {
+//     this.#value = str + this.#value;
+//   }
+
+//   // Додає рядок і на початок, і в кінець
+//   pad(str) {
+//     this.#value = str + this.#value + str;
+//   }
+// }
+
+// // Приклад використання
+// const builder = new StringBuilder("middle");
+
+// builder.append(" end");
+// console.log(builder.getValue()); // "middle end"
+
+// builder.prepend("start ");
+// console.log(builder.getValue()); // "start middle end"
+
+// builder.pad("***");
+// console.log(builder.getValue()); // "***start middle end***"
